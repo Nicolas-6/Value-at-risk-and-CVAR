@@ -20,11 +20,7 @@ Dow_Jones_data =  yf.download("^DJI", start, end )["Close"][:1759]
 
 Cac_change = Cac40_data.pct_change().dropna()
 Eurostoxx_change= EuroStoxx_data.pct_change().dropna()
-DJ_change= Dow_Jones_data.pct_change().d)ropna()
-
-Change_ptf = np.transpose(np.array([Cac_change,Eurostoxx_change,DJ_change]))
-type(Change_ptf)
-np.percentile(Change_ptf[:,1], 0.15)
+DJ_change= Dow_Jones_data.pct_change().dropna()
 
 
 def value_at_risk (Histo_returns, weight, alpha, lookback_days, initial_portfolio):
